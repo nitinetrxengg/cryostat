@@ -1,0 +1,18 @@
+apiVersion: operator.cryostat.io/v1beta1
+kind: ClusterCryostat
+metadata:
+  name: clustercryostat-demo
+spec:
+  enableCertManager: false
+  installNamespace: kedademo
+  minimal: false
+  reportOptions:
+    resources: {}
+  storageOptions:
+    pvc:
+      spec:
+        resources: {}
+  targetNamespaces:
+    - kedademo
+    - cryostatdemo
+
