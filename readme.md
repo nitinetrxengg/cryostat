@@ -12,7 +12,7 @@ Deploying Java Applictaions for Cryostat monitoring
 
 oc new-app --docker-image=quay.io/andrewazores/quarkus-test:0.0.10
 
-oc patch svc/cryostat-quarkus -p '{"spec":{"$setElementOrder/ports":[{"port":9097},{"port":8080}],"ports":[{"name":"jfr-jmx","port":9097}]}}' 
+oc patch svc/cryostatdemons-quarkus -p '{"spec":{"$setElementOrder/ports":[{"port":9097},{"port":8080}],"ports":[{"name":"jfr-jmx","port":9097}]}}' 
 
 In above patch the service with 9097 port name as jfr-jmx. In this way - cryostat will automatically locate the target JVM..
 
